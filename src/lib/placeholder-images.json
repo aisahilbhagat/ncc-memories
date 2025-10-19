@@ -1,0 +1,950 @@
+{
+  "placeholderImages": [
+    {
+      "id": "jpg-1",
+      "description": "A serene lake reflects the mountains under a clear blue sky.",
+      "imageUrl": "/memories/1.jpg",
+      "imageHint": "done",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-2",
+      "description": "A close-up portrait of a person with a thoughtful expression.",
+      "imageUrl": "/memories/2.jpg",
+      "imageHint": "person portrait",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-3",
+      "description": "A vast desert landscape with sand dunes stretching to the horizon.",
+      "imageUrl": "/memories/3.jpg",
+      "imageHint": "desert dunes",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-4",
+      "description": "A vibrant city street at night, bustling with lights and traffic.",
+      "imageUrl": "/memories/4.jpg",
+      "imageHint": "city night",
+      "width": 720,
+      "height": 1080,
+      "orientation": "portrait"
+    },
+    {
+      "id": "jpg-5",
+      "description": "A person stands looking out over a cliff, with the ocean in the background.",
+      "imageUrl": "/memories/5.jpg",
+      "imageHint": "person cliff",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-6",
+      "description": "A dense forest with sunbeams filtering through the tall trees.",
+      "imageUrl": "/memories/6.jpg",
+      "imageHint": "forest sunbeams",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-7",
+      "description": "A winding road through a colorful autumn forest.",
+      "imageUrl": "/memories/7.jpg",
+      "imageHint": "autumn road",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-8",
+      "description": "A portrait of a smiling individual in a sunlit field.",
+      "imageUrl": "/memories/8.jpg",
+      "imageHint": "smiling person",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-9",
+      "description": "A tranquil beach scene with gentle waves and a sunset.",
+      "imageUrl": "/memories/9.jpg",
+      "imageHint": "beach sunset",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-10",
+      "description": "An artist at work in a bright, creative studio.",
+      "imageUrl": "/memories/10.jpg",
+      "imageHint": "artist studio",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-11",
+      "description": "City skyline glowing at dusk.",
+      "imageUrl": "/memories/11.jpg",
+      "imageHint": "city dusk",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-12",
+      "description": "A quiet library with shelves full of books.",
+      "imageUrl": "/memories/12.jpg",
+      "imageHint": "library books",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-13",
+      "description": "Macro shot of a dewdrop on a leaf.",
+      "imageUrl": "/memories/13.jpg",
+      "imageHint": "dewdrop leaf",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-14",
+      "description": "A historic cobblestone street in an old town.",
+      "imageUrl": "/memories/14.jpg",
+      "imageHint": "cobblestone street",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-15",
+      "description": "Hot air balloons rising in the morning sky.",
+      "imageUrl": "/memories/15.jpg",
+      "imageHint": "balloons sky",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-16",
+      "description": "A delicious-looking plate of pasta.",
+      "imageUrl": "/memories/16.jpg",
+      "imageHint": "food pasta",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-17",
+      "description": "A powerful waterfall in a lush jungle.",
+      "imageUrl": "/memories/17.jpg",
+      "imageHint": "waterfall jungle",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-18",
+      "description": "A musician playing a guitar on stage.",
+      "imageUrl": "/memories/18.jpg",
+      "imageHint": "musician guitar",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-19",
+      "description": "A snowy mountain peak against a blue sky.",
+      "imageUrl": "/memories/19.jpg",
+      "imageHint": "snowy mountain",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-20",
+      "description": "A detailed shot of a vintage camera.",
+      "imageUrl": "/memories/20.jpg",
+      "imageHint": "vintage camera",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-21",
+      "description": "A long exposure of car light trails in a city.",
+      "imageUrl": "/memories/21.jpg",
+      "imageHint": "light trails",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-22",
+      "description": "A person hiking on a scenic trail.",
+      "imageUrl": "/memories/22.jpg",
+      "imageHint": "hiking trail",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-23",
+      "description": "A field of vibrant sunflowers.",
+      "imageUrl": "/memories/23.jpg",
+      "imageHint": "sunflowers field",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-24",
+      "description": "An old, weathered wooden door.",
+      "imageUrl": "/memories/24.jpg",
+      "imageHint": "wooden door",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-25",
+      "description": "A boat sailing on calm water.",
+      "imageUrl": "/memories/25.jpg",
+      "imageHint": "boat water",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-26",
+      "description": "Abstract architectural lines and shadows.",
+      "imageUrl": "/memories/26.jpg",
+      "imageHint": "abstract architecture",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-27",
+      "description": "A cup of coffee on a wooden table.",
+      "imageUrl": "/memories/27.jpg",
+      "imageHint": "coffee table",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-28",
+      "description": "A silhouette of a person against a sunset.",
+      "imageUrl": "/memories/28.jpg",
+      "imageHint": "silhouette sunset",
+      "width": 720,
+      "height": 1080,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-29",
+      "description": "A starry night sky over a forest.",
+      "imageUrl": "/memories/29.jpg",
+      "imageHint": "starry sky",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-30",
+      "description": "A classic car on a city street.",
+      "imageUrl": "/memories/30.jpg",
+      "imageHint": "classic car",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-31",
+      "description": "A path leading into a misty forest.",
+      "imageUrl": "/memories/31.jpg",
+      "imageHint": "misty forest",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-32",
+      "description": "A close-up of a cat's curious face.",
+      "imageUrl": "/memories/32.jpg",
+      "imageHint": "cat face",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-33",
+      "description": "A colorful market with fresh produce.",
+      "imageUrl": "/memories/33.jpg",
+      "imageHint": "market produce",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-34",
+      "description": "A person reading a book in a cozy armchair.",
+      "imageUrl": "/memories/34.jpg",
+      "imageHint": "reading book",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-35",
+      "description": "Reflections in a puddle on a city street.",
+      "imageUrl": "/memories/35.jpg",
+      "imageHint": "reflection puddle",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-36",
+      "description": "A minimalist interior design.",
+      "imageUrl": "/memories/36.jpg",
+      "imageHint": "minimalist interior",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-37",
+      "description": "A Ferris wheel at an amusement park.",
+      "imageUrl": "/memories/37.jpg",
+      "imageHint": "ferris wheel",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-38",
+      "description": "A person working on a laptop in a cafe.",
+      "imageUrl": "/memories/38.jpg",
+      "imageHint": "laptop cafe",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpg-39",
+      "description": "A lighthouse on a rocky coast.",
+      "imageUrl": "/memories/39.jpg",
+      "imageHint": "lighthouse coast",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-1",
+      "description": "A close-up of a colorful flower in a garden.",
+      "imageUrl": "/memories/1.jpeg",
+      "imageHint": "flower garden",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-2",
+      "description": "A vibrant city skyline at dusk.",
+      "imageUrl": "/memories/2.jpeg",
+      "imageHint": "city sunset",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-3",
+      "description": "A person enjoying a walk on a sunny beach.",
+      "imageUrl": "/memories/3.jpeg",
+      "imageHint": "beach person",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-4",
+      "description": "A dense forest with tall trees and sunlight filtering through.",
+      "imageUrl": "/memories/4.jpeg",
+      "imageHint": "forest light",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-5",
+      "description": "An old building with intricate architecture.",
+      "imageUrl": "/memories/5.jpeg",
+      "imageHint": "architecture building",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-6",
+      "description": "A plate of delicious-looking food on a rustic table.",
+      "imageUrl": "/memories/6.jpeg",
+      "imageHint": "food delicious",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-7",
+      "description": "A candid moment of people laughing together.",
+      "imageUrl": "/memories/7.jpeg",
+      "imageHint": "people friends",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-8",
+      "description": "A winding road through a picturesque countryside.",
+      "imageUrl": "/memories/8.jpeg",
+      "imageHint": "road travel",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-9",
+      "description": "An abstract pattern with bold colors and shapes.",
+      "imageUrl": "/memories/9.jpeg",
+      "imageHint": "abstract art",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-10",
+      "description": "A beautiful landscape with mountains and a clear lake.",
+      "imageUrl": "/memories/10.jpeg",
+      "imageHint": "nature mountain",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-11",
+      "description": "A serene lake reflects the mountains under a clear blue sky.",
+      "imageUrl": "/memories/11.jpeg",
+      "imageHint": "lake mountain",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-12",
+      "description": "A close-up portrait of a person with a thoughtful expression.",
+      "imageUrl": "/memories/12.jpeg",
+      "imageHint": "person portrait",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-13",
+      "description": "A vast desert landscape with sand dunes stretching to the horizon.",
+      "imageUrl": "/memories/13.jpeg",
+      "imageHint": "desert dunes",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-14",
+      "description": "A vibrant city street at night, bustling with lights and traffic.",
+      "imageUrl": "/memories/14.jpeg",
+      "imageHint": "city night",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-15",
+      "description": "A person stands looking out over a cliff, with the ocean in the background.",
+      "imageUrl": "/memories/15.jpeg",
+      "imageHint": "person cliff",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-16",
+      "description": "A dense forest with sunbeams filtering through the tall trees.",
+      "imageUrl": "/memories/16.jpeg",
+      "imageHint": "forest sunbeams",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-17",
+      "description": "A winding road through a colorful autumn forest.",
+      "imageUrl": "/memories/17.jpeg",
+      "imageHint": "autumn road",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-18",
+      "description": "A portrait of a smiling individual in a sunlit field.",
+      "imageUrl": "/memories/18.jpeg",
+      "imageHint": "smiling person",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-19",
+      "description": "A tranquil beach scene with gentle waves and a sunset.",
+      "imageUrl": "/memories/19.jpeg",
+      "imageHint": "beach sunset",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-20",
+      "description": "An artist at work in a bright, creative studio.",
+      "imageUrl": "/memories/20.jpeg",
+      "imageHint": "artist studio",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-21",
+      "description": "A quiet library with shelves full of books.",
+      "imageUrl": "/memories/21.jpeg",
+      "imageHint": "library books",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-22",
+      "description": "Macro shot of a dewdrop on a leaf.",
+      "imageUrl": "/memories/22.jpeg",
+      "imageHint": "dewdrop leaf",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-23",
+      "description": "A historic cobblestone street in an old town.",
+      "imageUrl": "/memories/23.jpeg",
+      "imageHint": "cobblestone street",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-24",
+      "description": "Hot air balloons rising in the morning sky.",
+      "imageUrl": "/memories/24.jpeg",
+      "imageHint": "balloons sky",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-25",
+      "description": "A delicious-looking plate of pasta.",
+      "imageUrl": "/memories/25.jpeg",
+      "imageHint": "food pasta",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-26",
+      "description": "A powerful waterfall in a lush jungle.",
+      "imageUrl": "/memories/26.jpeg",
+      "imageHint": "waterfall jungle",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-27",
+      "description": "A musician playing a guitar on stage.",
+      "imageUrl": "/memories/27.jpeg",
+      "imageHint": "musician guitar",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-28",
+      "description": "A snowy mountain peak against a blue sky.",
+      "imageUrl": "/memories/28.jpeg",
+      "imageHint": "snowy mountain",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-29",
+      "description": "A detailed shot of a vintage camera.",
+      "imageUrl": "/memories/29.jpeg",
+      "imageHint": "vintage camera",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-30",
+      "description": "A long exposure of car light trails in a city.",
+      "imageUrl": "/memories/30.jpeg",
+      "imageHint": "light trails",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-31",
+      "description": "A person hiking on a scenic trail.",
+      "imageUrl": "/memories/31.jpeg",
+      "imageHint": "hiking trail",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-32",
+      "description": "A field of vibrant sunflowers.",
+      "imageUrl": "/memories/32.jpeg",
+      "imageHint": "sunflowers field",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-33",
+      "description": "An old, weathered wooden door.",
+      "imageUrl": "/memories/33.jpeg",
+      "imageHint": "wooden door",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-34",
+      "description": "A boat sailing on calm water.",
+      "imageUrl": "/memories/34.jpeg",
+      "imageHint": "boat water",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-35",
+      "description": "Abstract architectural lines and shadows.",
+      "imageUrl": "/memories/35.jpeg",
+      "imageHint": "abstract architecture",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-36",
+      "description": "A cup of coffee on a wooden table.",
+      "imageUrl": "/memories/36.jpeg",
+      "imageHint": "coffee table",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-37",
+      "description": "A silhouette of a person against a sunset.",
+      "imageUrl": "/memories/37.jpeg",
+      "imageHint": "silhouette sunset",
+      "width": 720,
+      "height": 1080,
+      "orientation": "portrait"
+    },
+    {
+      "id": "jpeg-38",
+      "description": "A starry night sky over a forest.",
+      "imageUrl": "/memories/38.jpeg",
+      "imageHint": "starry sky",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-39",
+      "description": "A classic car on a city street.",
+      "imageUrl": "/memories/39.jpeg",
+      "imageHint": "classic car",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-40",
+      "description": "A path leading into a misty forest.",
+      "imageUrl": "/memories/40.jpeg",
+      "imageHint": "misty forest",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-41",
+      "description": "A close-up of a cat's curious face.",
+      "imageUrl": "/memories/41.jpeg",
+      "imageHint": "cat face",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-42",
+      "description": "A colorful market with fresh produce.",
+      "imageUrl": "/memories/42.jpeg",
+      "imageHint": "market produce",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-43",
+      "description": "A person reading a book in a cozy armchair.",
+      "imageUrl": "/memories/43.jpeg",
+      "imageHint": "reading book",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-44",
+      "description": "Reflections in a puddle on a city street.",
+      "imageUrl": "/memories/44.jpeg",
+      "imageHint": "reflection puddle",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-45",
+      "description": "A minimalist interior design.",
+      "imageUrl": "/memories/45.jpeg",
+      "imageHint": "minimalist interior",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-46",
+      "description": "A Ferris wheel at an amusement park.",
+      "imageUrl": "/memories/46.jpeg",
+      "imageHint": "ferris wheel",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-47",
+      "description": "A person working on a laptop in a cafe.",
+      "imageUrl": "/memories/47.jpeg",
+      "imageHint": "laptop cafe",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-48",
+      "description": "A lighthouse on a rocky coast.",
+      "imageUrl": "/memories/48.jpeg",
+      "imageHint": "lighthouse coast",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-49",
+      "description": "A serene lake reflects the mountains under a clear blue sky.",
+      "imageUrl": "/memories/49.jpeg",
+      "imageHint": "lake mountain",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-50",
+      "description": "A close-up portrait of a person with a thoughtful expression.",
+      "imageUrl": "/memories/50.jpeg",
+      "imageHint": "person portrait",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-51",
+      "description": "A vast desert landscape with sand dunes stretching to the horizon.",
+      "imageUrl": "/memories/51.jpeg",
+      "imageHint": "desert dunes",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-52",
+      "description": "A vibrant city street at night, bustling with lights and traffic.",
+      "imageUrl": "/memories/52.jpeg",
+      "imageHint": "city night",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-53",
+      "description": "A person stands looking out over a cliff, with the ocean in the background.",
+      "imageUrl": "/memories/53.jpeg",
+      "imageHint": "person cliff",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-54",
+      "description": "A dense forest with sunbeams filtering through the tall trees.",
+      "imageUrl": "/memories/54.jpeg",
+      "imageHint": "forest sunbeams",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-55",
+      "description": "A winding road through a colorful autumn forest.",
+      "imageUrl": "/memories/55.jpeg",
+      "imageHint": "autumn road",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-56",
+      "description": "A portrait of a smiling individual in a sunlit field.",
+      "imageUrl": "/memories/56.jpeg",
+      "imageHint": "smiling person",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-57",
+      "description": "A tranquil beach scene with gentle waves and a sunset.",
+      "imageUrl": "/memories/57.jpeg",
+      "imageHint": "beach sunset",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-58",
+      "description": "An artist at work in a bright, creative studio.",
+      "imageUrl": "/memories/58.jpeg",
+      "imageHint": "artist studio",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-59",
+      "description": "City skyline glowing at dusk.",
+      "imageUrl": "/memories/59.jpeg",
+      "imageHint": "city dusk",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-60",
+      "description": "A quiet library with shelves full of books.",
+      "imageUrl": "/memories/60.jpeg",
+      "imageHint": "library books",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-61",
+      "description": "Macro shot of a dewdrop on a leaf.",
+      "imageUrl": "/memories/61.jpeg",
+      "imageHint": "dewdrop leaf",
+      "width": 720,
+      "height": 1080,
+      "orientation": "portrait"
+    },
+    {
+      "id": "jpeg-62",
+      "description": "A historic cobblestone street in an old town.",
+      "imageUrl": "/memories/62.jpeg",
+      "imageHint": "cobblestone street",
+      "width": 720,
+      "height": 1080,
+      "orientation": "portrait"
+    },
+    {
+      "id": "jpeg-63",
+      "description": "Hot air balloons rising in the morning sky.",
+      "imageUrl": "/memories/63.jpeg",
+      "imageHint": "balloons sky",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-64",
+      "description": "A delicious-looking plate of pasta.",
+      "imageUrl": "/memories/64.jpeg",
+      "imageHint": "food pasta",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-65",
+      "description": "A powerful waterfall in a lush jungle.",
+      "imageUrl": "/memories/65.jpeg",
+      "imageHint": "waterfall jungle",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    },
+    {
+      "id": "jpeg-66",
+      "description": "A musician playing a guitar on stage.",
+      "imageUrl": "/memories/66.jpeg",
+      "imageHint": "musician guitar",
+      "width": 1080,
+      "height": 720,
+      "orientation": "landscape"
+    }
+  ]
+}
+

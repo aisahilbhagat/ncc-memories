@@ -1,4 +1,5 @@
 import { MemoryGallery } from '@/components/memory-gallery';
+import { ImageCacher } from '@/components/image-cacher';
 import { AllImages, PortraitImages } from '@/lib/placeholder-images';
 import { Metadata } from 'next';
 
@@ -24,6 +25,7 @@ export default function Home() {
 
   return (
     <main className="font-body bg-background">
+      <ImageCacher images={AllImages} />
       <MemoryGallery allImages={shuffledImages} initialBgImage={initialBgImage} />
     </main>
   );

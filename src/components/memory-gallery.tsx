@@ -10,6 +10,50 @@ import { cn } from '@/lib/utils';
 import type { ImagePlaceholder } from '@/lib/placeholder-images';
 import { ArrowLeft, ArrowRight, Grid, Image as ImageIcon, X, Expand, Minimize } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
+import { getImage } from '@/lib/indexed-db';
+
+// Custom hook to get an image from IndexedDB or fall back to network.
+const useOfflineImage = (imageUrl: string | null) => {
+  const [source, setSource] = useState<string | null>(imageUrl);
+
+  useEffect(() => {
+    if (!imageUrl) return;
+
+    let isMounted = true;
+    const fetchImage = async () => {
+      const cachedBlob = await getImage(imageUrl);
+      if (isMounted) {
+        if (cachedBlob) {
+          setSource(URL.createObjectURL(cachedBlob));
+        } else {
+          setSource(imageUrl); // Fallback to network URL
+        }
+      }
+    };
+
+    fetchImage();
+
+    return () => {
+      isMounted = false;
+      // Revoke object URL to prevent memory leaks if it was created
+      if (source && source.startsWith('blob:')) {
+        URL.revokeObjectURL(source);
+      }
+    };
+  }, [imageUrl]); // source is intentionally omitted from deps
+
+  return source;
+};
+
 
 // Props for the component, specifying the images it will manage.
 interface MemoryGalleryProps {
@@ -32,6 +76,10 @@ export function MemoryGallery({ allImages, initialBgImage }: MemoryGalleryProps)
   const [isLocked, setIsLocked] = useState(false);
   // State to track fullscreen status
   const [isFullScreen, setIsFullScreen] = useState(false);
+  
+  // State for first-visit tutorials
+  const [isFirstVisit, setIsFirstVisit] = useState(false);
+  const [showMobileWarning, setShowMobileWarning] = useState(false);
 
 
   // Hook to detect mobile viewport.
@@ -44,6 +92,27 @@ export function MemoryGallery({ allImages, initialBgImage }: MemoryGalleryProps)
   const panStart = useRef({ x: 0, y: 0 });
   const panPosition = useRef({ x: 0, y: 0 });
   const didPan = useRef(false); // Track if a pan occurred during a pointer down
+
+  // Use our custom hook to get the right image source (DB or network)
+  const currentImageSource = useOfflineImage(currentImage?.imageUrl ?? null);
+  const nextImageSource = useOfflineImage(nextImage?.imageUrl ?? null);
+  const initialBgSource = useOfflineImage(initialBgImage.imageUrl);
+  const bgImageSource = useOfflineImage(galleryMode === 'swipe' && currentImage ? currentImage.imageUrl : initialBgImage.imageUrl);
+
+
+  // Check for first visit on mount
+  useEffect(() => {
+    // We need to check this only on the client-side
+    const hasVisited = localStorage.getItem('hasVisitedMemoryLane');
+    if (!hasVisited) {
+      setIsFirstVisit(true);
+      // Only show the mobile warning if the user is on mobile
+      if (window.innerWidth < 768) {
+        setShowMobileWarning(true);
+      }
+    }
+  }, []);
+
 
   // Core function to transition to the next image.
   const showNextImage = useCallback(() => {
@@ -85,8 +154,12 @@ export function MemoryGallery({ allImages, initialBgImage }: MemoryGalleryProps)
   
   const handleSwipe = useCallback(() => {
     if (isLocked) return;
+    if (isFirstVisit) {
+      localStorage.setItem('hasVisitedMemoryLane', 'true');
+      setIsFirstVisit(false);
+    }
     showNextImage();
-  }, [showNextImage, isLocked]);
+  }, [showNextImage, isLocked, isFirstVisit]);
 
   // Handler to start the gallery from the landing page.
   const startGallery = () => {
@@ -110,6 +183,11 @@ export function MemoryGallery({ allImages, initialBgImage }: MemoryGalleryProps)
   const toggleLock = useCallback(() => {
     if (!currentImage) return;
 
+    if (isFirstVisit) {
+      localStorage.setItem('hasVisitedMemoryLane', 'true');
+      setIsFirstVisit(false);
+    }
+
     const newIsLocked = !isLocked;
     setIsLocked(newIsLocked);
 
@@ -126,7 +204,7 @@ export function MemoryGallery({ allImages, initialBgImage }: MemoryGalleryProps)
             easing: 'easeOutCubic'
         });
     }
-  }, [isLocked, currentImage]);
+  }, [isLocked, currentImage, isFirstVisit]);
 
   const toggleFullScreen = useCallback(() => {
     if (!document.fullscreenElement) {
@@ -304,34 +382,55 @@ export function MemoryGallery({ allImages, initialBgImage }: MemoryGalleryProps)
     }
   };
 
+  const dismissMobileWarning = () => {
+    localStorage.setItem('hasVisitedMemoryLane', 'true');
+    setShowMobileWarning(false);
+    // Don't set isFirstVisit to false here, so the gallery hints still show
+  }
+
 
   // Main render method for the component.
   return (
     <div className="fixed inset-0 bg-background overflow-hidden select-none">
       {/* Background Image: A blurred version of an image for atmosphere. */}
-      <Image
-        key={galleryMode === 'swipe' ? (currentImage?.id ?? initialBgImage.id) : initialBgImage.id}
-        src={(galleryMode === 'swipe' && currentImage) ? currentImage.imageUrl : initialBgImage.imageUrl}
+      {bgImageSource && <Image
+        key={bgImageSource}
+        src={bgImageSource}
         alt="Blurred background"
         fill
         quality={20}
         className="object-cover transform-gpu scale-110 blur-xl brightness-75 transition-all duration-1000"
         priority
-      />
+      />}
       
       {/* Preloading the next image: It's rendered in a hidden div to trigger browser download. */}
-      {nextImage && (
+      {nextImageSource && (
         <div className="hidden">
           <Image
-            src={nextImage.imageUrl}
+            src={nextImageSource}
             alt="Preloading next image"
-            width={nextImage.width}
-            height={nextImage.height}
+            width={nextImage?.width ?? 1920}
+            height={nextImage?.height ?? 1080}
             quality={100}
             priority
           />
         </div>
       )}
+
+      {/* One-time popup for mobile users */}
+      <AlertDialog open={showMobileWarning} onOpenChange={setShowMobileWarning}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Best Viewed on Desktop</AlertDialogTitle>
+            <AlertDialogDescription>
+              For the best experience with interactive zoom and navigation, we recommend viewing on a laptop or desktop computer.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction onClick={dismissMobileWarning}>Continue</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
 
       {galleryMode === 'swipe' ? (
         // Gallery View: Displayed after the user clicks the "Memories" button.
@@ -349,6 +448,22 @@ export function MemoryGallery({ allImages, initialBgImage }: MemoryGalleryProps)
               </div>
             </>
           )}
+          
+          {/* First visit tutorial hints */}
+          {isFirstVisit && !isLocked && (
+            <div className="absolute inset-0 pointer-events-none z-30 flex items-center justify-center">
+              <div className="relative w-full h-full">
+                  {/* Swipe hint */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-lg text-center animate-pulse">
+                      <p>Swipe or use arrow keys to navigate</p>
+                  </div>
+                  {/* Other hints positioned around the screen */}
+                  <p className="absolute top-16 left-4 bg-black/50 text-white p-2 rounded-lg text-sm">Grid View & Fullscreen</p>
+                  <p className="absolute bottom-1/4 left-1/2 -translate-x-1/2 bg-black/50 text-white p-2 rounded-lg text-sm">Tap photo to zoom & pan</p>
+              </div>
+            </div>
+          )}
+
 
           {isLocked && (
             <Button
@@ -367,18 +482,24 @@ export function MemoryGallery({ allImages, initialBgImage }: MemoryGalleryProps)
             className="relative drop-shadow-2xl transition-transform duration-500 ease-in-out opacity-0"
             style={{ perspective: '1000px', opacity: currentImage ? 1 : 0 }}
           >
-            {currentImage && (
+            {currentImage && currentImageSource && (
               <div 
                 className={cn(
                   "relative bg-black/30 rounded-lg overflow-hidden shadow-2xl transition-all duration-300 ease-in-out",
                    isLocked ? "cursor-grab" : "cursor-zoom-in"
                 )}
                 style={getImageSizeStyle()}
+                onClick={() => {
+                  if (isFirstVisit) {
+                    localStorage.setItem('hasVisitedMemoryLane', 'true');
+                    setIsFirstVisit(false);
+                  }
+                }}
               >
                 <Image
                   ref={imageRef}
                   key={currentImage.id}
-                  src={currentImage.imageUrl}
+                  src={currentImageSource}
                   alt={currentImage.description}
                   width={currentImage.width}
                   height={currentImage.height}
@@ -409,16 +530,7 @@ export function MemoryGallery({ allImages, initialBgImage }: MemoryGalleryProps)
           <ScrollArea className="w-full h-[80%] bg-black/20 rounded-lg">
             <div className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {allImages.map(image => (
-                <div key={image.id} className="relative aspect-square rounded-md overflow-hidden cursor-pointer group" onClick={() => handleFrozenImageClick(image)}>
-                  <Image
-                    src={image.imageUrl}
-                    alt={image.description}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-110"
-                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
-                </div>
+                <FrozenImageTile key={image.id} image={image} onClick={() => handleFrozenImageClick(image)} />
               ))}
             </div>
           </ScrollArea>
@@ -453,4 +565,21 @@ export function MemoryGallery({ allImages, initialBgImage }: MemoryGalleryProps)
       </div>
     </div>
   );
+}
+
+// A new component for the grid view tiles to use the offline hook
+function FrozenImageTile({ image, onClick }: { image: ImagePlaceholder; onClick: () => void; }) {
+  const imageSource = useOfflineImage(image.imageUrl);
+  return (
+    <div className="relative aspect-square rounded-md overflow-hidden cursor-pointer group" onClick={onClick}>
+      {imageSource && <Image
+        src={imageSource}
+        alt={image.description}
+        fill
+        className="object-cover transition-transform duration-300 group-hover:scale-110"
+        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+      />}
+      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+    </div>
+  )
 }
